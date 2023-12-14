@@ -1,0 +1,60 @@
+---
+id: 289b3f24-2bb9-4af6-98e2-b3087df3606e
+title: Create a Document
+tags: []
+---
+# Create a Document
+
+Documents are **groups of pages** connected through:
+
+- a **sidebar**
+- **previous/next navigation**
+- **versioning**
+## Create your first Doc
+
+Create a Markdown file at `docs/hello.md` :
+
+
+```markdown title="docs/hello.md"
+# Hello
+
+This is my **first Docusaurus document**!
+```
+A new document is now available at [http://localhost:3000/docs/hello](http://localhost:3000/docs/hello) .
+
+## Configure the Sidebar
+
+Docusaurus automatically **creates a sidebar** from the `docs` folder.
+
+Add metadata to customize the sidebar label and position:
+
+
+```markdown title="docs/hello.md"
+---
+sidebar_label: 'Hi!'
+sidebar_position: 3
+---
+
+# Hello
+
+This is my **first Docusaurus document**!
+```
+It is also possible to create your sidebar explicitly in `sidebars.js` :
+
+
+
+
+```javascript title="sidebars.js"
+export default {
+  tutorialSidebar: [
+    'intro',
+		// highlight-next-line
+    'hello',
+    {
+      type: 'category',
+      label: 'Tutorial',
+      items: ['tutorial-basics/create-a-document'],
+    },
+  ],
+};
+```
